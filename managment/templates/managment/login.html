@@ -1,0 +1,59 @@
+{% extends 'managment/model.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+  <header class="masthead" style="width: 100%; height: 100vh; padding-top: 155px;">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">{{ titulo }}</h2>
+      </div>
+      <div class="col-md-6 mx-auto">
+        <form id="contactForm" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+          <input class="btn btn-primary text-uppercase" type="submit" value="Acessar" style="margin-top: 24px;" />
+        </form>
+        
+        <!-- Link para cadastro -->
+        <div class="text-center mt-3">
+          <a href="/create/" class="text-white text-decoration-underline">
+            Não tem uma conta? Cadastre-se
+          </a>
+        </div>
+        <style>
+          .asteriskField {
+            display: none;
+          }
+          
+          #contactForm .form-group {
+            margin-bottom: 20px;
+          }
+          
+          #contactForm input,
+          #contactForm select,
+          #contactForm textarea {
+            margin-bottom: 16px;
+          }
+          
+          #contactForm .mb-3 {
+            margin-bottom: 12px !important;
+          }
+          
+          #contactForm input[type='submit'] {
+            width: 50%;
+            font-size: 18px;
+          }
+          
+          .col-md-6.mx-auto {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+          }
+        </style>
+      </div>
+    </div>
+  </header>
+{% endblock %}

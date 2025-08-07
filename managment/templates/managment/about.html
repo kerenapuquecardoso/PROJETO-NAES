@@ -1,0 +1,17 @@
+{% extends 'managment/model.html' %}
+{% load static %}
+
+{% block conteudo %}
+  <section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Sobre nós</h2>
+            <h3 class="section-subheading text-muted">Aqui está os diagramas da UML utilizados para o desenvolvimento desse projeto</h3>
+        </div>
+        <p class="text-muted">O projeto é um catálogo online para o Ateliê Eliane Noivas, especializado em trajes para ocasiões especiais. O ateliê produz principalmente vestidos de noiva, além de outras peças como vestidos para debutantes, formandas e daminhas. Também oferece ternos para noivos e padrinhos. O catálogo digital organiza e exibe todos esses modelos, permitindo que os clientes visualizem as opções disponíveis antes de visitar o ateliê.</p>
+        <img class="img-fluid" src="{% static 'img/diagrama_de_classe.jpg' %}" alt="Diagrama de classes" />
+        <img class="img-fluid" src="{% static 'img/diagrama_caso_de_uso.jpg' %}" alt="Diagrama de caso de uso" />
+      </div>
+    </div>
+  </section>
+{% endblock %}

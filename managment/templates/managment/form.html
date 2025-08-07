@@ -1,0 +1,20 @@
+
+{% extends 'managment/model.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block conteudo %}
+  <section class="page-section" id="services" >
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase"> {{ titulo }}</h2>
+        <h3 class="section-subheading text-muted">{{subTitulo}}</h3>
+      </div>
+      <form id="contactForm" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-primary text-uppercase" type="submit" value="Cadastrar"  style="margin-top: 24px;"/>
+      </form>
+    </div>
+  </section>
+{% endblock %}

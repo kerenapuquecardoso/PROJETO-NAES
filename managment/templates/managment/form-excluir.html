@@ -1,0 +1,23 @@
+{% extends 'managment/model.html' %}
+{% load static %}
+
+{% block conteudo %}
+  <section class="page-section" id="services" >
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-heading text-uppercase">{{ titulo }}</h2>
+        <h3 class="section-subheading text-muted">{{ subTitulo }}</h3>
+      </div>
+      <form method="post">
+        {% csrf_token %}
+        <p class="text-center" style="margin: 32px 0;">
+          <strong class="section-heading text-uppercase">{{ object }}</strong>
+        </p>
+        <div class="text-center">
+          <input class="btn btn-danger text-uppercase" type="submit" value="Excluir" style="margin-right: 16px;" />
+          <a href="{{ request.META.HTTP_REFERER|default:'/' }}" class="btn btn-secondary text-uppercase">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

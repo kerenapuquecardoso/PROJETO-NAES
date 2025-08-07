@@ -1,0 +1,23 @@
+{% extends 'managment/model.html' %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Confirmar Logout</h4>
+                </div>
+                <div class="card-body">
+                    <p>Tem certeza que deseja sair?</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Sim, Sair</button>
+                        <a href="javascript:history.back()" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
